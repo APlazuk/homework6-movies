@@ -1,5 +1,6 @@
 package pl.aplazuk.homework6movies.aspects;
 
+import jakarta.mail.MessagingException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -21,10 +22,10 @@ public class MovieAspects {
     }
 
     @After("@annotation(MovieAspect)")
-    public void afterAddedMovie(JoinPoint joinPoint) throws Throwable {
+    public void afterAddedMovie(JoinPoint joinPoint) throws MessagingException {
         Movie movie = Arrays.stream(joinPoint.getArgs())
-                .filter(arg -> arg instanceof Movie)
-                .map(arg -> (Movie) arg)
+                .filter(Movie.class::isInstance)
+                .map(Movie.class::cast)
                 .findFirst()
                 .orElse(null);
 

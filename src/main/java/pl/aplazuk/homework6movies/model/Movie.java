@@ -24,27 +24,27 @@ public class Movie {
         this.producer = producer;
     }
 
-    public @NotNull @NotBlank(message = "Please provide a movie title") String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(@NotNull @NotBlank(message = "Please provide a movie title") String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public @NotNull @NotBlank(message = "Please provide year of movie production") String getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(@NotNull @NotBlank(message = "Please provide year of movie production") String year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
-    public @NotNull @NotBlank(message = "Please provide movie producer") String getProducer() {
+    public String getProducer() {
         return producer;
     }
 
-    public void setProducer(@NotNull @NotBlank(message = "Please provide movie producer") String producer) {
+    public void setProducer(String producer) {
         this.producer = producer;
     }
 }
